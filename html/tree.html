@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>tree</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/tree.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/digui.js"></script> -->
+	<script type="text/javascript" src="../js/tree.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+</head>
+<body>
+<ul id="tree"></ul>
+<div class="button" id="tool">
+	<button class="add" id="add" type="button" disabled="true">添加到同级节点</button>
+	<button class="addChild" id="addChild" type="button" disabled="true">添加到子节点</button>
+	<button class="delete" id="delete" type="button" disabled="true">删除</button>
+	<button class="up" id="up" type="button" disabled="true">上移</button>
+	<button class="down" id="down" type="button" disabled="true">下移</button>
+	<button class="copy" id="copy" type="button" disabled="true" >复制</button>
+	<button class="cut" id="cut" type="button" disabled="true">剪切</button>
+	<button class="paste" id="paste" type="button" disabled="true">粘贴到同级节点</button>
+	<button class="pasteChild" id="pasteChild" type="button" disabled="true">粘贴到子节点</button>
+	<button class="open" id="open" type="button">全部展开</button>
+	<button class="close" id="close" type="button" disabled="true">全部关闭</button>
+	<div class= "addDiv hide" id="addDiv">
+		<label>文件名:</label>
+		<input id="input" type="text" name="file" value="">
+		<button class="true" id="true" type="button" name="" disabled="true">确定</button>
+	</div>
+</div>
+<script type="text/javascript">
+var data = [
+		    {
+		        "title": "node1",
+		        "children": [
+		            {
+		                "title": "node1-1",
+		            },
+		            {
+		                "title": "node1-2",
+		            }
+		        ]
+		    },
+		    {
+		        "title": "node2",
+		        "children": [
+		            {
+		                "title": "node2-1",
+		            },
+		            {
+		                "title": "node2-2", 
+		                "children": [
+		                    {
+		                        "title": "node2-2-1",
+		                    }
+		                ]
+		            },
+		            {
+		                "title": "node2-3",
+		               
+		            }
+		        ]
+		    },
+		    {
+		        "title": "node3",
+		        "children": [
+		            {
+		            "title":"node3-1",
+		            }
+		        ]
+		    },
+		    {
+		        "title": "node4",
+		        "children":[{
+		            "title":"node4-1",
+		            "children":[{
+		                "title":"node4-1-1",
+		                "children":[{
+		                    "title":"node4-1-1-1",
+		                    "children":[{
+		                        "title":"node4-1-1-1-1",
+		                    }]
+		                }
+		                ]
+		            }
+		            ]
+		        }
+		        ]
+		    }
+		];
+	$(function(){
+		treeObj.createTree($("#tree"),data);
+	});
+</script>
+</body>
+</html>
